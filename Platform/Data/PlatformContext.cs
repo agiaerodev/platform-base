@@ -83,7 +83,7 @@ namespace Platform.Data
                 optionsBuilder.UseSqlServer(connectionString, sqlOptions =>
                 {
                     sqlOptions.CommandTimeout(600);
-                    sqlOptions.MigrationsHistoryTable("__MyMigrationsHistory", Ihelpers.Helpers.ConfigurationHelper.GetConfig("App:ShortName"));
+                    sqlOptions.MigrationsHistoryTable(Ihelpers.Helpers.ConfigurationHelper.GetConfig("App:MigrationHistory"), Ihelpers.Helpers.ConfigurationHelper.GetConfig("App:ShortName"));
                 });
             }
         }
