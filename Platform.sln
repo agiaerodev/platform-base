@@ -13,11 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Idata", "Idata", "{1AE57AC1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ihelpers", "Ihelpers", "{A0F05051-75C5-4253-9A65-BBC2CF69D1CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "core-module\Core.csproj", "{9A8B679E-FEAE-F668-84DA-62DEED259766}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "core-module\Core.csproj", "{9A8B679E-FEAE-F668-84DA-62DEED259766}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ihelpers", "helpers-module\Ihelpers.csproj", "{85C55837-96FB-F34F-9063-63B31F857388}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ihelpers", "helpers-module\Ihelpers.csproj", "{85C55837-96FB-F34F-9063-63B31F857388}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Idata", "Idata-module\Idata.csproj", "{08E1BF16-E679-CECD-8CC9-36808D5CC76F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Idata", "Idata-module\Idata.csproj", "{08E1BF16-E679-CECD-8CC9-36808D5CC76F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CliPlatform", "patform-base-cli\CliPlatform.csproj", "{ED710B8E-FCCB-4DFB-912E-BF79F8B86DF9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{08E1BF16-E679-CECD-8CC9-36808D5CC76F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08E1BF16-E679-CECD-8CC9-36808D5CC76F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08E1BF16-E679-CECD-8CC9-36808D5CC76F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED710B8E-FCCB-4DFB-912E-BF79F8B86DF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED710B8E-FCCB-4DFB-912E-BF79F8B86DF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED710B8E-FCCB-4DFB-912E-BF79F8B86DF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED710B8E-FCCB-4DFB-912E-BF79F8B86DF9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
