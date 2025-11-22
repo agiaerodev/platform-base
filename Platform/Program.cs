@@ -28,6 +28,7 @@ var runSeeders = false;
 #region global parameters setting
 builder = Idata.IdataServiceProvider.Boot(builder);
 builder = Core.CoreServiceProvider.Boot(builder);
+//appendBuilder
 #endregion
 
 
@@ -161,7 +162,7 @@ app.UseRequestLocalization(locOptions.Value);
 if (runSeeders)
 {
     //Run modules seeder if needed.
-
+    // appendSeeder
     //SeederExecutor.ExecuteSeeder(IprofileSeeder.Seed, "ProfileSeeder", app);
 }
 #endregion
