@@ -1,0 +1,6 @@
+[submodule "core-module"]
+	path = core-module
+	url = https://github.com/agiaerodev/core-module.git
+[submodule "helpers-module"]
+	path = helpers-module
+	url = https://github.com/agiaerodev/helpers-module.git
