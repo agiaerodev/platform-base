@@ -24,7 +24,7 @@
     
     <ProjectReference Include="..\core-module\Core.csproj" />
     <ProjectReference Include="..\helpers-module\Ihelpers.csproj" />
-    <ProjectReference Include="..\Idata-module\Idata.csproj" />
+    <ProjectReference Include="..\Idata\Idata.csproj" />
     
   </ItemGroup>
   <ItemGroup>
