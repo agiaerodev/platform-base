@@ -9,6 +9,7 @@ using Idata.Data.Entities.Isite;
 using Idata.Data.Entities.Iprofile;
 using Idata.Entities.Test;
 using System.Reflection;
+//appendUsingCommandLine
 using Idata.Entities.Isite;
 
 namespace Idata.Data
@@ -69,7 +70,8 @@ namespace Idata.Data
         public virtual DbSet<Role> Roles { get; set; } = null!;
         public virtual DbSet<AuthClient> AuthClients { get; set; } = null!;
 
-       
+        //appendConsoleLineEntity
+
         #region Test Entities
         public virtual DbSet<TestEntity> Tests { get; set; } = null!;
         #endregion
@@ -113,18 +115,18 @@ namespace Idata.Data
                     .IsUnicode(false);
             });
 
-           
+
 
             modelBuilder.Entity<User>(entity =>
             {
                 entity.HasIndex(e => e.email).IsUnique();
             });
 
-           
+
             modelBuilder.Entity<Idata.Data.Entities.Isite.Module>()
                 .Property(m => m.priority)
                 .HasDefaultValue(1);
-         
+
             modelBuilder.Entity<Department>(entity =>
             {
                 entity.Property(e => e.options).HasColumnType("text");
@@ -136,7 +138,6 @@ namespace Idata.Data
             modelBuilder.Entity<Idata.Data.Entities.Isite.Module>()
                 .Property(m => m.priority)
                 .HasDefaultValue(1);
-           
         }
  
 

@@ -9,6 +9,7 @@ using Idata.Entities.Iprofile;
 using Idata.Data.Entities.Isite;
 using Idata.Data.Entities.Iprofile;
 using Ihelpers.Helpers;
+//appendUsingCommandLine
 
 namespace Platform.Data
 {
@@ -17,7 +18,7 @@ namespace Platform.Data
         public PlatformContext() : base()
         {
         }
-        public PlatformContext(DbContextOptions<IdataContext> options) : base(options)
+        public PlatformContext(DbContextOptions<PlatformContext> options) : base(options)
         {
 
         }
@@ -55,7 +56,7 @@ namespace Platform.Data
 
 
 
-         
+
 
 
         //public virtual DbSet<Log> Logs { get; set; } = null!;
@@ -68,11 +69,11 @@ namespace Platform.Data
         //public virtual DbSet<Role> Roles { get; set; } = null!;
         //public virtual DbSet<AuthClient> AuthClients { get; set; } = null!;
 
-        
+
         ////Tests
         //public virtual DbSet<TestEntity> Tests { get; set; } = null!;
 
-
+        //appendConsoleLineEntity
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -92,8 +93,81 @@ namespace Platform.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
+            modelBuilder.HasDefaultSchema("dbo");
 
-           
+            modelBuilder.Entity<User>(entity =>
+            {
+                // Map to the existing table name
+                entity.ToTable("users", schema: "iprofile");
+
+                // THIS IS THE KEY: Tell EF to ignore this table during migrations
+                entity.ToTable(t => t.ExcludeFromMigrations());
+            });
+
+            modelBuilder.Entity<Role>(entity =>
+            {
+                // Map to the existing table name
+                entity.ToTable("roles", schema: "iprofile");
+
+                // THIS IS THE KEY: Tell EF to ignore this table during migrations
+                entity.ToTable(t => t.ExcludeFromMigrations());
+            });
+
+            modelBuilder.Entity<Department>(entity =>
+            {
+                // Map to the existing table name
+                entity.ToTable("departments", schema: "iprofile");
+
+                // THIS IS THE KEY: Tell EF to ignore this table during migrations
+                entity.ToTable(t => t.ExcludeFromMigrations());
+            });
+
+            modelBuilder.Entity<AuthClient>(entity =>
+            {
+                // Map to the existing table name
+                entity.ToTable("AuthClients", schema: "iprofile");
+
+                // THIS IS THE KEY: Tell EF to ignore this table during migrations
+                entity.ToTable(t => t.ExcludeFromMigrations());
+            });
+
+            modelBuilder.Entity<User>()
+    .HasMany(u => u.roles)
+    .WithMany(r => r.users)
+    .UsingEntity<Dictionary<string, object>>(
+        "RoleUser",
+        j => j
+            .HasOne<Role>()
+            .WithMany()
+            .HasForeignKey("rolesid"),
+        j => j
+            .HasOne<User>()
+            .WithMany()
+            .HasForeignKey("usersid"),
+        j =>
+        {
+            j.ToTable("RoleUser", "iprofile", t => t.ExcludeFromMigrations());
+        });
+
+
+            modelBuilder.Entity<User>()
+   .HasMany(u => u.departments)
+   .WithMany(d => d.users)
+   .UsingEntity<Dictionary<string, object>>(
+       "DepartmentUser",
+       j => j
+           .HasOne<Department>()
+           .WithMany()
+           .HasForeignKey("departmentsid"),
+       j => j
+           .HasOne<User>()
+           .WithMany()
+           .HasForeignKey("usersid"),
+       j =>
+       {
+           j.ToTable("DepartmentUser", "iprofile", t => t.ExcludeFromMigrations());
+       });
+
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
