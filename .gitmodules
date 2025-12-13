@@ -4,6 +4,6 @@
 [submodule "helpers-module"]
 	path = helpers-module
 	url = https://github.com/agiaerodev/helpers-module.git
-[submodule "patform-base-cli"]
-	path = patform-base-cli
-	url = https://github.com/agiaerodev/patform-base-cli.git
+[submodule "platform-base-cli"]
+	path = platform-base-cli
+	url = https://github.com/agiaerodev/platform-base-cli.git
