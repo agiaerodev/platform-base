@@ -1,0 +1,15 @@
+namespace Icomments.Config
+{
+    public static class CmsPages
+    {
+
+        private static string cmsPages = @"{
+			
+		}";
+
+        public static string GetCmsPages()
+        {
+            return cmsPages;
+        }
+    }
+}
