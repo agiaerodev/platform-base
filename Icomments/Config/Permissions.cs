@@ -8,7 +8,15 @@ namespace Icomments.Config
         }
 
         private static string permissions = @"{
-        //append
+        'icomments.icomments': {
+                'manage': 'icomments::icomments.manage',
+                'index': 'icomments::icomments.list resource',
+                'edit': 'icomments::icomments.edit resource',
+                'create': 'icomments::icomments.create resource',
+                'destroy': 'icomments::icomments.destroy resource',
+                'restore': 'icomments::icomments.restore resource'
+                }
+//append
         }";
     }
 }

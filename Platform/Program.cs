@@ -4,6 +4,7 @@ using Core.Logger;
 using Core.Services;
 using Hangfire;
 //appendUsingSeeder
+using Icomments.Data.Seeders;
 using Hangfire.SqlServer;
 using Idata.Data;
 using Idata.Helpers;
@@ -29,6 +30,7 @@ var runSeeders = false;
 builder = Idata.IdataServiceProvider.Boot(builder);
 builder = Core.CoreServiceProvider.Boot(builder);
 //appendBuilder
+builder = Icomments.IcommentsServiceProvider.Boot(builder);
 #endregion
 
 
@@ -163,6 +165,7 @@ if (runSeeders)
 {
     //Run modules seeder if needed.
     //appendSeeder
+    IcommentsSeeder.Seed(app);
     //SeederExecutor.ExecuteSeeder(IprofileSeeder.Seed, "ProfileSeeder", app);
 }
 #endregion

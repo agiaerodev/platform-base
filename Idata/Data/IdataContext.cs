@@ -10,6 +10,7 @@ using Idata.Data.Entities.Iprofile;
 using Idata.Entities.Test;
 using System.Reflection;
 //appendUsingCommandLine
+using Idata.Entities.Icomments;
 using Idata.Entities.Isite;
 
 namespace Idata.Data
@@ -71,6 +72,7 @@ namespace Idata.Data
         public virtual DbSet<AuthClient> AuthClients { get; set; } = null!;
 
         //appendConsoleLineEntity
+        public virtual DbSet<Idata.Entities.Icomments.Icomment> Icomments { get; set; } = null!;
 
         #region Test Entities
         public virtual DbSet<TestEntity> Tests { get; set; } = null!;
