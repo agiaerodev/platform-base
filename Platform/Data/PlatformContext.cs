@@ -10,7 +10,6 @@ using Idata.Data.Entities.Isite;
 using Idata.Data.Entities.Iprofile;
 using Ihelpers.Helpers;
 //appendUsingCommandLine
-using Idata.Entities.Icomments;
 
 namespace Platform.Data
 {
@@ -75,7 +74,6 @@ namespace Platform.Data
         //public virtual DbSet<TestEntity> Tests { get; set; } = null!;
 
         //appendConsoleLineEntity
-        public virtual DbSet<Idata.Entities.Icomments.Icomment> Icomments { get; set; } = null!;
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
