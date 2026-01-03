@@ -29,7 +29,6 @@ var runSeeders = false;
 builder = Idata.IdataServiceProvider.Boot(builder);
 builder = Core.CoreServiceProvider.Boot(builder);
 //appendBuilder
-builder = Icomments.IcommentsServiceProvider.Boot(builder);
 #endregion
 
 
