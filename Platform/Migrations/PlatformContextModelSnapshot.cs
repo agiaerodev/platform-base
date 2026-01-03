@@ -256,77 +256,6 @@ namespace Platform.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Idata.Entities.Icomments.Icomment", b =>
-                {
-                    b.Property<long?>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long?>("id"));
-
-                    b.Property<bool?>("approved")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("comment")
-                        .HasColumnType("text");
-
-                    b.Property<long?>("commentable_id")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("commentable_type")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("created_at")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long?>("created_by")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime?>("deleted_at")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long?>("deleted_by")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("external_id")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("guest_email")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("guest_name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool?>("is_internal")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("offline_id")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("options")
-                        .HasColumnType("TEXT");
-
-                    b.Property<DateTime?>("restored_at")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long?>("restored_by")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime?>("updated_at")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long?>("updated_by")
-                        .HasColumnType("bigint");
-
-                    b.Property<long?>("user_id")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("user_id");
-
-                    b.ToTable("Icomments", "icomments");
-                });
 
             modelBuilder.Entity("Idata.Entities.Iprofile.AuthClient", b =>
                 {
@@ -447,14 +376,6 @@ namespace Platform.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Idata.Entities.Icomments.Icomment", b =>
-                {
-                    b.HasOne("Idata.Data.Entities.Iprofile.User", "userProfile")
-                        .WithMany()
-                        .HasForeignKey("user_id");
-
-                    b.Navigation("userProfile");
-                });
 
             modelBuilder.Entity("Idata.Entities.Iprofile.AuthClient", b =>
                 {
